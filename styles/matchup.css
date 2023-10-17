@@ -1,0 +1,22 @@
+/** MATCH-UPS */
+#match-ups {
+    text-align: center;
+
+    float: left;
+    width: 100%;
+
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px #ccc solid;
+}
+
+#match-ups .active {
+    color: white;
+    background-color: #677797;
+}
+
+#match-ups .active:hover {
+    color: white;
+    background-color: #ccc;
+    cursor: pointer;
+}

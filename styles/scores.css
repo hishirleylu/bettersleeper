@@ -1,0 +1,180 @@
+/** scores */
+
+#scores {
+    text-align: center;
+    width: 100%;
+}
+
+#scores .title {
+    margin-bottom: 4px;
+}
+
+#scores .box {
+    height: 32px;
+    margin: 4px 0;
+}
+
+#scores .box:hover {
+    cursor: default;
+    background-color: #303849;
+}
+
+.box.player-bye, .box.player-inactive {
+    background-color: #283141;
+}
+.box.player-bye:hover, .box.player-inactive:hover {
+    background-color: #283141;
+}
+
+/** ranking options */
+#ranking-options {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+#ranking-options .option {
+    display: inline-block;
+    margin: 0 8px;
+
+    color: #ccc;
+    font-weight: 200;
+}
+
+#ranking-options .option:hover {
+    color: #7f7f7f;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#ranking-options .active {
+    font-weight: 600;
+}
+
+/** scores home away center */
+
+#scores-home, #scores-away {
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+}
+
+#scores-home .box, #scores-away .box {
+    width: 170px;
+}
+
+#scores-center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: inline-block;
+    padding: 0 4px;
+    width: 36px;
+    vertical-align: top;
+    text-align: center;
+}
+
+#scores-center .box {
+    background-color: #283141;
+
+    width: 16px;
+    height: 16px;
+    margin: 14.2px 0;
+
+    border: 1px solid #343e52;
+    border-radius: 16px;
+}
+
+#scores-center .box:hover {
+    background-color: #283141;
+}
+
+#scores-center .WRT {
+    margin-left: -2px;
+}
+
+#scores-center .WRTQ {
+    line-height: 10px;
+    margin-top: -3px;
+}
+
+/** within box **/
+
+.player-name {
+    width: 124px;
+}
+
+.player-points {
+    width: 40px;
+}
+
+.position {
+    padding-top: 1.5px;
+}
+
+.player-fullname, .player-desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.player-left .player-bye, .player-left .player-injury {
+    margin-left: 4px;
+}
+.player-right .player-bye, .player-right .player-injury {
+    margin-right: 4px;
+}
+/** alignment */
+
+.player-left .player-points {
+    margin-right: 4px;
+}
+.player-right .player-points {
+    margin-left: 4px;
+}
+
+.player-right .player-points, .player-left .player-name, .player-left .player-desc, .player-left .player-fullname {
+    text-align: left;
+    float: left;
+}
+
+.player-left .player-points, .player-right .player-name, .player-right .player-desc, .player-right .player-fullname {
+    text-align: right;
+    float: right;
+}
+
+/** color */
+.QB {
+    color: rgb(252, 43, 109);
+}
+
+.WR {
+    color: rgb(89, 167, 255)
+}
+
+.RB {
+    color: rgb(32, 206, 184)
+}
+
+.TE {
+    color: rgb(254, 174, 88)
+}
+
+.K {
+
+}
+
+.DEF {
+
+}
+
+.BN {
+    color: rgb(163, 187, 211)
+}
+
+.player-bye .player-desc{
+    color: rgb(163, 187, 211)
+}
+
+.player-injury {
+    color: rgb(252, 43, 109);
+}

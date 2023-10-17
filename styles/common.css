@@ -1,0 +1,48 @@
+.content-wrapper {
+    width: 100%;
+}
+.content {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.box {
+    display: inline-block;
+    width: 106px;
+    margin: 4px;
+    padding: 7px;
+
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: #343e52;
+
+    background-color: #303849;
+}
+
+.box:hover {
+    color: white;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.box-title {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.box-subtitle {
+    font-size:10px;
+    font-weight: 300;
+}
+
+.title {
+    font-size: 14px;
+    font-weight:600;
+    margin-bottom: 16px;
+}
+
+.clear {
+    clear: both;
+}

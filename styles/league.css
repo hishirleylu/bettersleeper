@@ -1,0 +1,27 @@
+#leagues {
+    display: inline-block;
+    width: 100%;
+
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+
+    border-bottom: 1px solid #ccc;
+
+    text-align: center;
+}
+
+#leagues .active {
+    color: white;
+    background-color: #677797;
+}
+
+#leagues .active:hover {
+    color: white;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+#leagues .box {
+    vertical-align: top;
+    height: 50px;
+}
