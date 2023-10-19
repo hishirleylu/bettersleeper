@@ -10,7 +10,6 @@
 }
 
 #scores .box {
-    height: 32px;
     margin: 4px 0;
 }
 
@@ -54,12 +53,12 @@
 
 #scores-home, #scores-away {
     display: inline-block;
-    width: 200px;
+    width: 380px;
     vertical-align: top;
 }
 
 #scores-home .box, #scores-away .box {
-    width: 170px;
+    width: 340px;
 }
 
 #scores-center {
@@ -68,7 +67,7 @@
     transform: translate(-50%, 0%);
     display: inline-block;
     padding: 0 4px;
-    width: 36px;
+    width: 60px;
     vertical-align: top;
     text-align: center;
 }
@@ -76,12 +75,12 @@
 #scores-center .box {
     background-color: #283141;
 
-    width: 16px;
-    height: 16px;
-    margin: 14.2px 0;
+    width: 32px;
+    height: 32px;
+    margin: 20.2px 0;
 
     border: 1px solid #343e52;
-    border-radius: 16px;
+    border-radius: 32px;
 }
 
 #scores-center .box:hover {
@@ -89,22 +88,22 @@
 }
 
 #scores-center .WRT {
-    margin-left: -2px;
+    margin-left: -4px;
 }
 
 #scores-center .WRTQ {
-    line-height: 10px;
+    line-height: 18px;
     margin-top: -3px;
 }
 
 /** within box **/
 
 .player-name {
-    width: 124px;
+    width: 256px;
 }
 
 .player-points {
-    width: 40px;
+    width: 68px;
 }
 
 .position {
@@ -118,18 +117,18 @@
 }
 
 .player-left .player-bye, .player-left .player-injury {
-    margin-left: 4px;
+    margin-left: 12px;
 }
 .player-right .player-bye, .player-right .player-injury {
-    margin-right: 4px;
+    margin-right: 12px;
 }
 /** alignment */
 
 .player-left .player-points {
-    margin-right: 4px;
+    margin-right: 12px;
 }
 .player-right .player-points {
-    margin-left: 4px;
+    margin-left: 12px;
 }
 
 .player-right .player-points, .player-left .player-name, .player-left .player-desc, .player-left .player-fullname {

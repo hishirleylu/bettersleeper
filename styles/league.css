@@ -2,8 +2,8 @@
     display: inline-block;
     width: 100%;
 
-    padding-bottom: 12px;
-    margin-bottom: 12px;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
 
     border-bottom: 1px solid #ccc;
 
@@ -23,5 +23,5 @@
 
 #leagues .box {
     vertical-align: top;
-    height: 50px;
+    /*height: 92px;*/
 }
