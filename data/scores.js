@@ -26,6 +26,8 @@ function makeScoresForGm(gm) {
 
 function makeRegularScoresForGm(gm) {
     let players = STATE.leagueRosters[gm.roster_id].starters
+    let stat_sum = 0
+    let proj_sum = 0
     const playersArray = []
     for (let i in players) {
         const playerId = players[i]
@@ -44,6 +46,8 @@ function makeRegularScoresForGm(gm) {
             byeWeek || info.status === "Inactive" ? 0 : calculateProjScore(proj),
             final,
             byeWeek);
+        stat_sum += playerObject.stat_score
+        proj_sum += playerObject.proj_score
         playersArray.push(playerObject);
     }
 
@@ -67,8 +71,8 @@ function makeRegularScoresForGm(gm) {
 
     return {
         players: playersArray,
-        stat_sum: 0,
-        proj_sum: 0
+        stat_sum: stat_sum,
+        proj_sum: proj_sum
     };
 }
 
