@@ -9,9 +9,9 @@
 
 .box {
     display: inline-block;
-    width: 106px;
+    width: 220px;
     margin: 4px;
-    padding: 7px;
+    padding: 12px;
 
     border-style: solid;
     border-radius: 8px;
@@ -28,19 +28,19 @@
 }
 
 .box-title {
-    font-size: 12px;
+    font-size: 24px;
     font-weight: 600;
 }
 
 .box-subtitle {
-    font-size:10px;
+    font-size: 20px;
     font-weight: 300;
 }
 
 .title {
-    font-size: 14px;
+    font-size: 28px;
     font-weight:600;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
 .clear {
