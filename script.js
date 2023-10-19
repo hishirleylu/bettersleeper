@@ -36,5 +36,6 @@ async function init() {
             STATE.sleeper_userId = results[0].user_id;
             STATE.season = results[1].season;
             STATE.calendarWeek = results[1].display_week;
+            STATE.activeWeek = results[1].display_week;
         })
 }
