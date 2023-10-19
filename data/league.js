@@ -16,7 +16,7 @@ async function updateLeague() {
 
 async function fetchLeagues() {
     await getUserLeagues(STATE.sleeper_userId, STATE.season)
-        .then(leagues => STATE.leagues = leagues);
+        .then(leagues => STATE.leagues = leagues.filter(league => (league.status === "in_season")));
 }
 
 function fetchActiveLeagueInfo() {
