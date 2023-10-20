@@ -77,19 +77,21 @@
 
 #scores-center .box-wrapper.box, #scores-center .box-wrapper.box:hover {
     height: 60px;
+    width: 32px;
     border: none;
+    border-radius: 0;
     margin: 0;
-    padding: 0;
-    background-color: rgba(0, 0, 0, 0%);
+    padding: 17px 0;
+    background-color: rgba(255, 0, 0, 50%);
 }
 
 #scores-center .box {
-    display: inline-table;
+    display: block;
     background-color: #283141;
 
     width: 32px;
     height: 32px;
-    margin: 18px 0;
+    margin: 0;
 
     border: 1px solid #343e52;
     border-radius: 32px;
