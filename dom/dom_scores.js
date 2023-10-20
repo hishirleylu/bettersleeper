@@ -42,6 +42,7 @@ const CLASS_PLAYER_DESC = "player-desc"
 const CLASS_PLAYER_INJURY = "player-injury"
 const CLASS_PLAYER_BYE = "player-bye"
 const CLASS_PLAYER_INACTIVE = "player-inactive"
+const CLASS_PLAYER_ONGOING = "player-ongoing"
 
 const CLASS_PLAYER_POINTS = "player-points"
 const CLASS_PLAYER_STATSCORE = "player-stat-score"
@@ -73,8 +74,15 @@ function scoresCenter() {
     const wrapper = document.getElementById(ID_SCORES_CENTER)
     wrapper.appendChild(positionBoxDiv("BN", "VS"))
 
+    wrapper.appendChild(domElement("div", [CLASS_SPACE]));
+
+    let addedSpaceForBench = false;
     const positions = positionsArray()
     for (let i in positions) {
+        if (!addedSpaceForBench && positions[i] === "BN") {
+            addedSpaceForBench = true
+            wrapper.appendChild(domElement("div", [CLASS_SPACE]));
+        }
         wrapper.appendChild(positionBoxDiv(positions[i], positions[i]))
     }
 }
@@ -117,10 +125,20 @@ function scoresLeftRight(gmObject, scores, isHomeTeam) {
         isHomeTeam ? ID_SCORES_HOME : ID_SCORES_AWAY);
     div.appendChild(gmBox(gmObject, isHomeTeam, scores.stat_sum, scores.proj_sum))
 
+    div.appendChild(domElement("div", [CLASS_SPACE]));
+
     for (const i in scores.players) {
         let player = scores.players[i]
         div.appendChild(playerBox(player, isHomeTeam))
     }
+
+    div.appendChild(domElement("div", [CLASS_SPACE]));
+
+    for (const i in scores.bench) {
+        let player = scores.bench[i]
+        div.appendChild(playerBox(player, isHomeTeam))
+    }
+
 }
 
 function gmBox(gmObject, isHomeTeam, stat, proj) {
@@ -137,6 +155,8 @@ function playerBox(player, isHomeTeam) {
     const div = domElement("div", [CLASS_BOX, leftRightClass])
     if (player.team_bye) {
         div.classList.add(CLASS_PLAYER_BYE)
+    } else if (player.team_ongoing) {
+        div.classList.add(CLASS_PLAYER_ONGOING)
     } else if (player.status === "Inactive") {
         div.classList.add(CLASS_PLAYER_INACTIVE)
     }

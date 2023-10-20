@@ -1,5 +1,6 @@
 function bestBallSort(players) {
     let playersSorted = []
+    let benchSorted = []
     let ineligible = []
     let proj_sum = 0
     let stat_sum = 0
@@ -14,8 +15,11 @@ function bestBallSort(players) {
         let highestIndex = getHighestForPositions(players, positions, ineligible);
         ineligible.push(highestIndex)
         let player = players[highestIndex];
-        playersSorted.push(player)
-
+        if (position === "BN") {
+            benchSorted.push(player)
+        } else {
+            playersSorted.push(player)
+        }
         if (position !== "BN") {
             if (!isNaN(player.proj_score)) {
                 proj_sum += player.proj_score
@@ -25,7 +29,7 @@ function bestBallSort(players) {
             }
         }
     }
-    return { players: playersSorted, stat_sum: stat_sum, proj_sum: proj_sum }
+    return { players: playersSorted, bench: benchSorted,stat_sum: stat_sum, proj_sum: proj_sum }
 }
 
 function getHighestForPositions(players, positions, ineligible) {

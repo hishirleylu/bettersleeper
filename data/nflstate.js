@@ -69,7 +69,7 @@ function ongoingGames(week) {
     let ongoingGameKeys = Object.keys(NFL_STATE_CACHE.game_status)
         .filter( key => {
             let game = NFL_STATE_CACHE.game_status[key];
-            return game.week === STATE.activeWeek && game.status === "ongoing"
+            return game.week === STATE.activeWeek && game.status === "in_game"
         });
 
     const ongoingGames = []
