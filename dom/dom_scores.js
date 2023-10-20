@@ -88,6 +88,7 @@ function scoresCenter() {
 }
 
 function positionBoxDiv(positionClass, position) {
+    const wrapper = domElement("div", [CLASS_BOX, CLASS_BOX_WRAPPER])
     const div = domElement("div", [CLASS_BOX])
     if (position === "FLEX") {
         div.appendChild(wrtDiv())
@@ -98,7 +99,8 @@ function positionBoxDiv(positionClass, position) {
             [CLASS_POSITION, CLASS_BOX_SUBTITLE,
                 positionClass], position));
     }
-    return div;
+    wrapper.appendChild(div);
+    return wrapper;
 }
 
 function wrtDiv() {
