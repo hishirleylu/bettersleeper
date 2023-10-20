@@ -10,6 +10,7 @@
 }
 
 #scores .box {
+    display: inline-table;
     margin: 4px 0;
 }
 
@@ -18,10 +19,11 @@
     background-color: #303849;
 }
 
-.box.player-bye, .box.player-inactive {
-    background-color: #283141;
+.box.player-ongoing, .box.player-ongoing:hover {
+    background-color: #2c4952;
 }
-.box.player-bye:hover, .box.player-inactive:hover {
+
+.box.player-bye, .box.player-inactive, .box.player-bye:hover, .box.player-inactive:hover {
     background-color: #283141;
 }
 
@@ -73,11 +75,12 @@
 }
 
 #scores-center .box {
+    display: inline-table;
     background-color: #283141;
 
     width: 32px;
     height: 32px;
-    margin: 20.2px 0;
+    margin: 18px 0;
 
     border: 1px solid #343e52;
     border-radius: 32px;
@@ -94,6 +97,15 @@
 #scores-center .WRTQ {
     line-height: 18px;
     margin-top: -3px;
+}
+
+#scores-center .box-subtitle {
+    font-weight:600;
+}
+
+.space {
+    margin: 16px 0;
+    border: 1px solid #303849;
 }
 
 /** within box **/
@@ -159,11 +171,12 @@
 }
 
 .K {
-
+    color: rgb(189, 102, 255)
 }
 
 .DEF {
-
+    color: rgb(191, 95, 64);
+    margin-left: -2px;
 }
 
 .BN {

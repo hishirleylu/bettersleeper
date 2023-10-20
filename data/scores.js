@@ -45,7 +45,8 @@ function makeRegularScoresForGm(gm) {
             byeWeek || info.status === "Inactive" ? 0 : calculateStatsScore(stats, ongoing, final),
             byeWeek || info.status === "Inactive" ? 0 : calculateProjScore(proj),
             final,
-            byeWeek);
+            byeWeek,
+            ongoing);
         stat_sum += playerObject.stat_score
         proj_sum += playerObject.proj_score
         playersArray.push(playerObject);
@@ -53,6 +54,7 @@ function makeRegularScoresForGm(gm) {
 
     let bench = STATE.leagueRosters[gm.roster_id].players
         .filter(a => !players.includes(a))
+    const benchArray = []
     for (let i in bench) {
         const playerId = bench[i]
         const stats = statsForPlayerId(playerId);
@@ -65,12 +67,14 @@ function makeRegularScoresForGm(gm) {
             byeWeek || info.status === "Inactive" ? 0 : calculateStatsScore(stats, ongoing, final),
             byeWeek || info.status === "Inactive" ? 0 : calculateProjScore(proj),
             final,
-            byeWeek);
-        playersArray.push(playerObject);
+            byeWeek,
+            ongoing);
+        benchArray.push(playerObject);
     }
 
     return {
         players: playersArray,
+        bench: benchArray,
         stat_sum: stat_sum,
         proj_sum: proj_sum
     };
@@ -91,7 +95,8 @@ function makeBestBallScoresForGm(gm) {
             calculateStatsScore(stats),
             calculateProjScore(proj),
             final,
-            byeWeek);
+            byeWeek,
+            ongoing);
         playersArray.push(playerObject);
     }
     return bestBallSort(playersArray);
@@ -141,7 +146,7 @@ function emptyPlayerObject() {
     }
 }
 
-function makePlayerObject(info, statScore, projScore, isFinal, isByeWeek) {
+function makePlayerObject(info, statScore, projScore, isFinal, isByeWeek, isOngoing) {
     let injury = getInjuryStatus(info)
     return {
         display_name: "{f}. {l}".replace("{f}", info.first_name.charAt(0))
@@ -153,7 +158,8 @@ function makePlayerObject(info, statScore, projScore, isFinal, isByeWeek) {
         proj_score: projScore,
         status: info.status,
         injury_status: injury,
-        team_bye: isByeWeek
+        team_bye: isByeWeek,
+        team_ongoing: isOngoing
     }
 }
 
