@@ -61,7 +61,7 @@
 
 #scores-home .box, #scores-away .box {
     width: 340px;
-    height: 60px;
+    height: 64px;
 }
 
 #scores-center {
@@ -76,13 +76,14 @@
 }
 
 #scores-center .box-wrapper.box, #scores-center .box-wrapper.box:hover {
-    height: 60px;
+    display: inline-table;
+    height: 66px;
     width: 32px;
     border: none;
     border-radius: 0;
-    margin: 0;
-    padding: 17px 0;
-    background-color: rgba(255, 0, 0, 50%);
+    margin: 4px 0;
+    padding: 12px 0;
+    background-color: rgba(0, 0, 0, 0%);
 }
 
 #scores-center .box {
@@ -91,7 +92,7 @@
 
     width: 32px;
     height: 32px;
-    margin: 0;
+    margin: 4px 0;
 
     border: 1px solid #343e52;
     border-radius: 32px;
