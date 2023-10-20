@@ -86,6 +86,12 @@
     background-color: rgba(0, 0, 0, 0%);
 }
 
+@media (pointer:none), (pointer:coarse) {
+    #scores-center .box-wrapper.box, #scores-center .box-wrapper.box:hover {
+        margin: 6px 0;
+    }
+}
+
 #scores-center .box {
     display: block;
     background-color: #283141;
