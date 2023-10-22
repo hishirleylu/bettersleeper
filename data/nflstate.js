@@ -65,6 +65,23 @@ function allGames() {
     return games;
 }
 
+function pregameGames(week) {
+    let pregameGameKeys = Object.keys(NFL_STATE_CACHE.game_status)
+        .filter(key => {
+            let game = NFL_STATE_CACHE.game_status[key];
+            return game.week === STATE.activeWeek && game.status === "pre_game"
+        });
+
+    const pregameGames = []
+    for (let key in pregameGameKeys) {
+        let game = NFL_STATE_CACHE.game_status[pregameGameKeys[key]]
+        pregameGames.push(game.home)
+        pregameGames.push(game.away)
+    }
+    return pregameGames;
+}
+
+
 function ongoingGames(week) {
     let ongoingGameKeys = Object.keys(NFL_STATE_CACHE.game_status)
         .filter( key => {

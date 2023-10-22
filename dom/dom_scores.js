@@ -43,6 +43,7 @@ const CLASS_PLAYER_INJURY = "player-injury"
 const CLASS_PLAYER_BYE = "player-bye"
 const CLASS_PLAYER_INACTIVE = "player-inactive"
 const CLASS_PLAYER_ONGOING = "player-ongoing"
+const CLASS_PLAYER_FINAL = "player-final"
 
 const CLASS_PLAYER_POINTS = "player-points"
 const CLASS_PLAYER_STATSCORE = "player-stat-score"
@@ -147,7 +148,7 @@ function gmBox(gmObject, isHomeTeam, stat, proj) {
     const leftRightClass = isHomeTeam ? CLASS_PLAYER_LEFT : CLASS_PLAYER_RIGHT;
     const div = domElement("div", [CLASS_BOX, leftRightClass])
     div.appendChild(playerNameDiv(gmObject.name, undefined, gmObject.team_name, undefined))
-    div.appendChild(playerScoreDiv(stat, proj))
+    div.appendChild(playerScoreDiv(stat, proj, false))
     return div;
 }
 
@@ -159,13 +160,15 @@ function playerBox(player, isHomeTeam) {
         div.classList.add(CLASS_PLAYER_BYE)
     } else if (player.team_ongoing) {
         div.classList.add(CLASS_PLAYER_ONGOING)
+    } else if (player.final) {
+        div.classList.add(CLASS_PLAYER_FINAL)
     } else if (player.status === "Inactive") {
         div.classList.add(CLASS_PLAYER_INACTIVE)
     }
     const player_desc = (player.final ? "(Final) " : "") +
         player.team + " - " + player.position
     div.appendChild(playerNameDiv(player.display_name, player.injury_status, player_desc, player.team_bye))
-    div.appendChild(playerScoreDiv(player.stat_score, player.proj_score))
+    div.appendChild(playerScoreDiv(player.stat_score, player.proj_score, player.team_pregame))
     return div;
 }
 
@@ -190,9 +193,9 @@ function playerNameDiv(name, status, desc, bye) {
     return div;
 }
 
-function playerScoreDiv(stat, proj) {
+function playerScoreDiv(stat, proj, isPregame) {
     const div = domElement("div", [CLASS_PLAYER_POINTS])
-    div.appendChild(domElementWithInnerText("div", [CLASS_PLAYER_STATSCORE, CLASS_BOX_TITLE], formatNumber(stat)))
+    div.appendChild(domElementWithInnerText("div", [CLASS_PLAYER_STATSCORE, CLASS_BOX_TITLE], isPregame ? "-" : formatNumber(stat)))
     div.appendChild(domElementWithInnerText("div", [CLASS_PLAYER_PROJSCORE, CLASS_BOX_SUBTITLE], formatNumber(proj)))
     return div;
 }

@@ -39,6 +39,7 @@ function makeRegularScoresForGm(gm) {
         const proj = projForPlayerId(playerId);
         const info = infoForPlayerId(playerId);
         const byeWeek = !(allGames().includes(info.team))
+        const pregame = pregameGames(STATE.activeWeek).includes(info.team)
         const ongoing = ongoingGames(STATE.activeWeek).includes(info.team)
         const final = completedGames(STATE.activeWeek).includes(info.team)
         let playerObject = makePlayerObject(info,
@@ -46,7 +47,8 @@ function makeRegularScoresForGm(gm) {
             byeWeek || info.status === "Inactive" ? 0 : calculateProjScore(proj),
             final,
             byeWeek,
-            ongoing);
+            ongoing,
+            pregame);
         stat_sum += playerObject.stat_score
         proj_sum += playerObject.proj_score
         playersArray.push(playerObject);
@@ -60,6 +62,7 @@ function makeRegularScoresForGm(gm) {
         const stats = statsForPlayerId(playerId);
         const proj = projForPlayerId(playerId);
         const info = infoForPlayerId(playerId);
+        const pregame = pregameGames(STATE.activeWeek).includes(info.team)
         const byeWeek = !(allGames().includes(info.team))
         const ongoing = ongoingGames(STATE.activeWeek).includes(info.team)
         const final = completedGames(STATE.activeWeek).includes(info.team)
@@ -68,7 +71,8 @@ function makeRegularScoresForGm(gm) {
             byeWeek || info.status === "Inactive" ? 0 : calculateProjScore(proj),
             final,
             byeWeek,
-            ongoing);
+            ongoing,
+            pregame);
         benchArray.push(playerObject);
     }
 
@@ -89,6 +93,7 @@ function makeBestBallScoresForGm(gm) {
         const proj = projForPlayerId(playerId);
         const info = infoForPlayerId(playerId);
         const byeWeek = !(allGames().includes(info.team))
+        const pregame = pregameGames(STATE.activeWeek).includes(info.team)
         const ongoing = ongoingGames(STATE.activeWeek).includes(info.team)
         const final = completedGames(STATE.activeWeek).includes(info.team)
         let playerObject = makePlayerObject(info,
@@ -96,7 +101,8 @@ function makeBestBallScoresForGm(gm) {
             calculateProjScore(proj),
             final,
             byeWeek,
-            ongoing);
+            ongoing,
+            pregame);
         playersArray.push(playerObject);
     }
     return bestBallSort(playersArray);
@@ -142,11 +148,13 @@ function emptyPlayerObject() {
         proj_score: 0,
         status: "Inactive",
         injury_status: undefined,
-        team_bye: false
+        team_bye: false,
+        team_ongoing: false,
+        team_pregame: false
     }
 }
 
-function makePlayerObject(info, statScore, projScore, isFinal, isByeWeek, isOngoing) {
+function makePlayerObject(info, statScore, projScore, isFinal, isByeWeek, isOngoing, isPregame) {
     let injury = getInjuryStatus(info)
     return {
         display_name: "{f}. {l}".replace("{f}", info.first_name.charAt(0))
@@ -159,7 +167,8 @@ function makePlayerObject(info, statScore, projScore, isFinal, isByeWeek, isOngo
         status: info.status,
         injury_status: injury,
         team_bye: isByeWeek,
-        team_ongoing: isOngoing
+        team_ongoing: isOngoing,
+        team_pregame: isPregame
     }
 }
 

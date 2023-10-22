@@ -23,8 +23,15 @@
 
 .box:hover {
     color: white;
-    background-color: #ccc;
+    background-color: #3f4758;
     cursor: pointer;
+}
+
+@media (pointer:none), (pointer:coarse) {
+    .box:hover {
+        background-color: #3f4758;
+        cursor: pointer;
+    }
 }
 
 .box-title {
