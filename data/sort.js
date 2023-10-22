@@ -45,7 +45,7 @@ function getHighestForPositions(players, positions, ineligible) {
 
 function getScoreForPlayer(player) {
     // use stats
-    if (STATE.activeRanking === 1) {
+    if (STATE.activeRanking == 1) {
         return player.stat_score;
     }
     // use projections
