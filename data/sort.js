@@ -53,5 +53,6 @@ function getScoreForPlayer(player) {
     if (player.final) {
         return player.stat_score
     }
-    return player.proj_score
+
+    return Math.max(player.proj_score, player.stat_score)
 }
