@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Better Sleeper</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/league.css">
+    <link rel="stylesheet" href="styles/matchup.css">
+    <link rel="stylesheet" href="styles/scores.css">
+    <link rel="stylesheet" href="styles/settings.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+
+    <script src="script.js"></script>
+
+    <script src="api/common.js"></script>
+    <script src="api/sleeper_leagues.js"></script>
+    <script src="api/sleeper_nflstate.js"></script>
+    <script src="api/sleeper_user.js"></script>
+
+    <script src="data/league.js"></script>
+    <script src="data/matchups.js"></script>
+    <script src="data/nflstate.js"></script>
+    <script src="data/ranking.js"></script>
+    <script src="data/settings.js"></script>
+    <script src="data/scores.js"></script>
+    <script src="data/sort.js"></script>
+
+    <script src="dom/dom.js"></script>
+    <script src="dom/dom_constants.js"></script>
+    <script src="dom/dom_league.js"></script>
+    <script src="dom/dom_matchups.js"></script>
+    <script src="dom/dom_scores.js"></script>
+    <script src="dom/dom_settings.js"></script>
+</head>
+<body>
+<div id="container">
+    <div id="leagues">
+        <div class="section-title">Leagues</div>
+        <div class="content" id="leagues-content"></div>
+    </div>
+    <div id="settings">
+        <div class="section-title">Week</div>
+        <div id="week"></div>
+    </div>
+    <div id="match-ups"></div>
+    <div id="scores">
+        <div class="section-title">Scores</div>
+        <div class="refresh"><button onclick="refreshNflStateCache(); updateScores();">Refresh</button></div>
+        <div id="ranking-options"></div>
+        <div class="content">
+            <div id="scores-home"></div>
+            <div id="scores-center"></div>
+            <div id="scores-away"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

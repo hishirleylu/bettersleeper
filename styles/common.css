@@ -34,17 +34,17 @@
     }
 }
 
-.box-title {
+.title {
     font-size: 24px;
     font-weight: 600;
 }
 
-.box-subtitle {
+.subtitle {
     font-size: 20px;
     font-weight: 300;
 }
 
-.title {
+.section-title {
     font-size: 28px;
     font-weight:600;
     margin-bottom: 32px;
@@ -52,4 +52,20 @@
 
 .clear {
     clear: both;
+}
+
+button, input[type=submit] {
+    background-color: #303849;
+    color: white;
+    border: 1px solid #343e52;
+    border-radius: 8px;
+    padding: 4px 16px;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+
+button:hover {
+    background-color: #3f4758;
+    cursor: pointer;
 }

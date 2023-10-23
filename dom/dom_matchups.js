@@ -9,7 +9,7 @@ function updateMatchUpsDom() {
     let div = document.getElementById(ID_MATCHUPS);
     div.innerText = "";
     // label
-    div.appendChild(domElementWithInnerText("div", [CLASS_TITLE], "Match-Ups"))
+    div.appendChild(domElementWithInnerText("div", [CLASS_SECTION_TITLE], "Match-Ups"))
 
     // match-ups
     for (let i in STATE.matchUps) {
@@ -33,9 +33,9 @@ function matchUpDiv(matchupIndex, gmName1, gmName2, isActive) {
     return div;
 }
 function matchUpGmDiv(gmName) {
-    return domElementWithInnerText("div", [CLASS_MATCHUPGM, CLASS_BOX_TITLE], gmName);
+    return domElementWithInnerText("div", [CLASS_MATCHUPGM, CLASS_TITLE], gmName);
 }
 
 function matchUpVsDiv() {
-    return domElementWithInnerText("div", [CLASS_MATCHUPVS, CLASS_BOX_SUBTITLE], "- vs -");
+    return domElementWithInnerText("div", [CLASS_MATCHUPVS, CLASS_SUBTITLE], "- vs -");
 }

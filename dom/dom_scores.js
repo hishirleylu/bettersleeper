@@ -14,7 +14,7 @@ function rankingOptionDiv() {
     let div = domElement("div", [])
     for (let i in STATE.ranking) {
         let ranking = STATE.ranking[i];
-        const classes = [CLASS_BOX_TITLE, CLASS_OPTION];
+        const classes = [CLASS_TITLE, CLASS_OPTION];
         if (i == STATE.activeRanking) { classes.push(CLASS_ACTIVE); }
         div.appendChild(rankingOptionTypeDiv(i, ranking.name, classes));
     }
@@ -97,7 +97,7 @@ function positionBoxDiv(positionClass, position) {
         div.appendChild(wrtqDiv())
     } else {
         div.appendChild(domElementWithInnerText("div",
-            [CLASS_POSITION, CLASS_BOX_SUBTITLE,
+            [CLASS_POSITION, CLASS_SUBTITLE,
                 positionClass], position));
     }
     wrapper.appendChild(div);
@@ -105,7 +105,7 @@ function positionBoxDiv(positionClass, position) {
 }
 
 function wrtDiv() {
-    const div = domElement("div", [CLASS_POSITION, CLASS_BOX_SUBTITLE, "WRT"])
+    const div = domElement("div", [CLASS_POSITION, CLASS_SUBTITLE, "WRT"])
     div.appendChild(domElementWithInnerText("span", ["WR"], "W"));
     div.appendChild(domElementWithInnerText("span", ["RB"], "R"));
     div.appendChild(domElementWithInnerText("span", ["TE"], "T"));
@@ -113,7 +113,7 @@ function wrtDiv() {
 }
 
 function wrtqDiv() {
-    const div = domElement("div", [CLASS_POSITION, CLASS_BOX_SUBTITLE, "WRTQ"])
+    const div = domElement("div", [CLASS_POSITION, CLASS_SUBTITLE, "WRTQ"])
     div.appendChild(domElementWithInnerText("span", ["WR"], "W"));
     div.appendChild(domElementWithInnerText("span", ["RB"], "R"));
     div.appendChild(document.createElement("br"))
@@ -175,7 +175,7 @@ function playerBox(player, isHomeTeam) {
 function playerNameDiv(name, status, desc, bye) {
     const div = domElement("div", [CLASS_PLAYER_NAME])
 
-    let nameDiv = domElement("div", [CLASS_BOX_TITLE]);
+    let nameDiv = domElement("div", [CLASS_TITLE]);
     nameDiv.appendChild(domElementWithInnerText("span", [CLASS_PLAYER_FULL_NAME], name));
     if (status !== undefined) {
         nameDiv.appendChild(domElementWithInnerText("span", [CLASS_PLAYER_FULL_NAME, CLASS_PLAYER_INJURY], status))
@@ -184,7 +184,7 @@ function playerNameDiv(name, status, desc, bye) {
 
     div.appendChild(domElement("div", [CLASS_CLEAR]))
 
-    let descDiv = domElement("div", [CLASS_BOX_SUBTITLE]);
+    let descDiv = domElement("div", [CLASS_SUBTITLE]);
     descDiv.appendChild(domElementWithInnerText("span", [CLASS_PLAYER_DESC], desc));
     if (bye) {
         descDiv.appendChild(domElementWithInnerText("span", [CLASS_PLAYER_DESC, CLASS_PLAYER_BYE], "BYE"))
@@ -195,7 +195,7 @@ function playerNameDiv(name, status, desc, bye) {
 
 function playerScoreDiv(stat, proj, isPregame) {
     const div = domElement("div", [CLASS_PLAYER_POINTS])
-    div.appendChild(domElementWithInnerText("div", [CLASS_PLAYER_STATSCORE, CLASS_BOX_TITLE], isPregame ? "-" : formatNumber(stat)))
-    div.appendChild(domElementWithInnerText("div", [CLASS_PLAYER_PROJSCORE, CLASS_BOX_SUBTITLE], formatNumber(proj)))
+    div.appendChild(domElementWithInnerText("div", [CLASS_PLAYER_STATSCORE, CLASS_TITLE], isPregame ? "-" : formatNumber(stat)))
+    div.appendChild(domElementWithInnerText("div", [CLASS_PLAYER_PROJSCORE, CLASS_SUBTITLE], formatNumber(proj)))
     return div;
 }

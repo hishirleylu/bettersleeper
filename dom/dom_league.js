@@ -20,8 +20,8 @@ function makeLeagueDiv(leagueIndex, leagueName, leagueDesc, isActive) {
     const classes = [CLASS_LEAGUE, CLASS_BOX];
     if (isActive) { classes.push(CLASS_ACTIVE); }
     let div = leagueDiv(leagueIndex, classes);
-    div.appendChild(leagueNameDiv(leagueName, [CLASS_LEAGUENAME, CLASS_BOX_TITLE]));
-    div.appendChild(leagueDescDiv(leagueDesc, [CLASS_LEAGUEDESC, CLASS_BOX_SUBTITLE]))
+    div.appendChild(leagueNameDiv(leagueName, [CLASS_LEAGUENAME, CLASS_TITLE]));
+    div.appendChild(leagueDescDiv(leagueDesc, [CLASS_LEAGUEDESC, CLASS_SUBTITLE]))
     return div;
 }
 

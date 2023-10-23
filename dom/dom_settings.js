@@ -23,7 +23,7 @@ function weekOptionsDiv() {
 }
 
 function makeWeekDiv(weekIndex, weekLabel) {
-    const classes = [CLASS_BOX_TITLE, CLASS_OPTION];
+    const classes = [CLASS_TITLE, CLASS_OPTION];
     if (weekIndex === STATE.activeWeek) { classes.push([CLASS_ACTIVE]); }
     return weekDiv(weekIndex, weekLabel, classes);
 }

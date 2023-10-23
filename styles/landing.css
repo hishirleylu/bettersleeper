@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+}
+
+#container {
+    height: 100vh;
+    text-align: center;
+}
+
+#header {
+    padding: 50px;
+    margin: auto;
+
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.subtitle {
+    margin: 32px 0;
+}
+
+input {
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+input[type=submit] {
+    margin-top: 12px;
+    font-size: 18px;
+}
