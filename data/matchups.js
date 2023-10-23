@@ -46,8 +46,8 @@ async function updateMatchUps() {
                     user_id: user.user_id,
                     roster_id: rosterId
                 }
-                if (o.gm1.name === STATE.sleeper_username ||
-                    o.gm2.name === STATE.sleeper_username) {
+                if (o.gm1.name.toLowerCase() === STATE.sleeper_username.toLowerCase() ||
+                    o.gm2.name.toLowerCase() === STATE.sleeper_username.toLowerCase()) {
                     matchUpArray.unshift(o);
                 } else {
                     matchUpArray.push(o);
