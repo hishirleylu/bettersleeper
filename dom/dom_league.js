@@ -28,8 +28,8 @@ function makeLeagueDiv(leagueIndex, leagueName, leagueDesc, isActive) {
 function leagueDiv(leagueIndex, classes) {
     let div = domElement("div", classes);
     div.id = ID_LEAGUEID.replace("{idx}", leagueIndex);
-    div.addEventListener("click", function (){
-        setActiveLeague(leagueIndex); updateLeague(); updateScores(); })
+    div.addEventListener("click", async function (){
+        setActiveLeague(leagueIndex); await updateLeague(); updateScores(); })
     return div;
 }
 

@@ -32,7 +32,7 @@ function weekDiv(weekIndex, weekLabel, classes) {
     let div = domElementWithInnerText("div", classes, weekLabel);
     div.id = ID_WEEKNUM.replace("{idx}", weekIndex);
     div.addEventListener("click", async function() {
-        setActiveWeek(weekIndex); updateWeek(); resetMatchUps(); await updateMatchUps();
+        setActiveWeek(weekIndex); updateWeek(); setActiveMatchUp(0); await updateMatchUps();
         resetRanking(); updateRanking(); await refreshNflStateCache();
         updateScores(); })
     return div;

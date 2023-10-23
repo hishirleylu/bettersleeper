@@ -23,9 +23,14 @@ const STATE = {
 window.onload = async function() {
     await init();
     await refreshNflStateCache();
-    resetActiveLeague();
+    activeLeagueFromUrl();
     await updateLeague();
     updateScores();
+}
+
+function activeLeagueFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    setActiveLeague(urlParams.has("activeLeague") ? urlParams.get("activeLeague") : 0);
 }
 
 async function init() {

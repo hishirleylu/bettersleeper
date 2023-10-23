@@ -1,9 +1,6 @@
 function setActiveMatchUp(index) {
     STATE.activeMatchUp = index;
 }
-function resetMatchUps() {
-    STATE.activeMatchUp = 0;
-}
 
 async function updateMatchUps() {
     await fetchMatchUps()
@@ -49,7 +46,12 @@ async function updateMatchUps() {
                     user_id: user.user_id,
                     roster_id: rosterId
                 }
-                matchUpArray.push(o);
+                if (o.gm1.name === STATE.sleeper_username ||
+                    o.gm2.name === STATE.sleeper_username) {
+                    matchUpArray.unshift(o);
+                } else {
+                    matchUpArray.push(o);
+                }
             }
             STATE.matchUps = matchUpArray;
         });

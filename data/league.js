@@ -1,15 +1,12 @@
 function setActiveLeague(index) {
     STATE.activeLeague = index;
 }
-function resetActiveLeague() {
-    STATE.activeLeague = 0;
-}
 async function updateLeague() {
     await fetchLeagues();
     updateLeagueDom();
     await fetchActiveLeagueInfo();
     await resetWeek(); updateWeek();
-    resetMatchUps(); await updateMatchUps();
+    setActiveMatchUp(0); await updateMatchUps();
     resetRanking(); updateRanking();
     updateScores();
 }
