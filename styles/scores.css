@@ -31,8 +31,9 @@
 /** refresh */
 .refresh {
     position: relative;
-    left: 316px;
+    left: 654px;
     bottom: 42px
+    width: 120px
 }
 .refresh button {
     background-color: #303849;
