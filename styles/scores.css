@@ -118,7 +118,7 @@
 
 @media (pointer:none), (pointer:coarse) {
     #scores-center .box-wrapper.box, #scores-center .box-wrapper.box:hover {
-        margin: 4px 0 5px 0;
+        margin: 4px 0 4px 0;
     }
 }
 
