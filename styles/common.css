@@ -70,3 +70,20 @@ button:hover {
     background-color: #3f4758;
     cursor: pointer;
 }
+
+#header {
+    width: 300px;
+    text-align: center;
+    padding-bottom: 30px;
+    margin: auto auto 30px;
+    border-bottom: 1px dashed #ccc;
+}
+
+#header a {
+    color: white;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; cursor: pointer; }
+a:active { text-decoration: none; }
