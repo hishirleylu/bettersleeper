@@ -21,12 +21,10 @@ function bestBallSort(players) {
             playersSorted.push(player)
         }
         if (position !== "BN") {
-            if (!isNaN(player.proj_score)) {
-                proj_sum += player.proj_score
-            }
-            if (!isNaN(player.stat_score)) {
-                stat_sum += player.stat_score
-            }
+            let projScore = isNaN(player.proj_score) ? 0 : player.proj_score;
+            let statScore = isNaN(player.stat_score) ? 0 : player.stat_score;
+            proj_sum += statScore > projScore ? statScore : projScore;
+            stat_sum += statScore;
         }
     }
     return { players: playersSorted, bench: benchSorted,stat_sum: stat_sum, proj_sum: proj_sum }
